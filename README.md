@@ -1,1 +1,0 @@
-# hugo_book_test
