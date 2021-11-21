@@ -2,6 +2,7 @@
 title: "The Cases: An Overview"
 output: html_document
 type: docs
+bookToc: true
 menu:
   after:
     name:

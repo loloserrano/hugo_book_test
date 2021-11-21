@@ -1,5 +1,6 @@
 ---
 title: "On Style"
+bookToc: true
 output: html_document
 menu:
   after:
@@ -7,9 +8,7 @@ menu:
     weight: 10
 ---
 
-## "Frugging KCP" and the word "Fruggish" are intentionally irreverent, but I think she wouldn't mind. Hear me out:
-
-## On Style
+## "Frugging KCP" and the word "Fruggish" are intentionally irreverent, and I think she wouldn't mind. 
 
 The following is from a section titled "On Style" in Frug's last work, "A Postmodern Feminist Legal Manifesto (An Unfinished Draft)."
 
