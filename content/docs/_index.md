@@ -2,7 +2,6 @@
 bookFlatSection: true
 title: Frugging KCP
 weight: 1
-bookHidden: false
 ---
 
 # Frugging KCP
