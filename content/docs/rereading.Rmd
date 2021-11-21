@@ -1,15 +1,18 @@
 ---
 title: "Re-Reading Contracts and Updating Frug"
 output: html_document
+blogdown.knit.on_save: true
 ---
 
 ## "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" 
 
 - "Women as characters"
     - test 
-- "Abstract characteristics" 
+- "Abstract characteristics"  
 
 ## Postmodernism
+
+Blah blah
 
 ## Queer
 

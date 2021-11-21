@@ -1,14 +1,15 @@
 ---
 title: "The Cases: An Overview"
 output: html_document
+type: docs
 ---
-
+ 
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(readxl)
 library(plotly)
-library(RColorBrewer)
+library(RColorBrewer) 
 contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
 defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
 plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
@@ -41,7 +42,7 @@ contracts <- contracts %>%
 
 ```
 
-# Overview 
+# Overview  
 
 ## Race
 

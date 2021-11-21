@@ -4,8 +4,8 @@ type: docs
 menu:
   before:
     name: 
-    weight: 10
-    
+    weight: 1
+
 ---
 
 # Frugging KCP
