@@ -1,7 +1,6 @@
 ---
 date: "2014-03-10"
 linktitle: Migrating from Jekyll
-layout: none
 menu:
   main:
     parent: tutorials

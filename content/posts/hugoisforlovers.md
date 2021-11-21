@@ -4,7 +4,6 @@ categories:
 - golang
 date: "2014-04-02"
 description: ""
-layout: none
 menu: main
 tags:
 - go

@@ -3,8 +3,13 @@ title: "Re-Reading Contracts and Updating Frug"
 output: html_document
 ---
 
-Mary Joe Frug "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" 
+## "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" 
 
 - "Women as characters"
     - test 
 - "Abstract characteristics" 
+
+## Postmodernism
+
+## Queer
+

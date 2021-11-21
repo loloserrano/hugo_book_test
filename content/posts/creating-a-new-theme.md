@@ -1,7 +1,6 @@
 ---
 author: Michael Henderson
 date: "2014-09-28"
-layout: none
 linktitle: Creating a New Theme
 menu:
   main:
