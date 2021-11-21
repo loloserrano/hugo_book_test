@@ -123,7 +123,7 @@ The language of the Kirksey v. Kirksey opinion is not nearly as charged: the pla
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 names(partnertable) <- c("","partner","%partner","family","%family","partner+family","%p+f")
 partnertable %>%
-  knitr::kable()
+  knitr::kable() 
 ```
 
 ## All Parties

@@ -3,9 +3,7 @@ title: "Re-Reading Contracts and Updating Frug"
 output: html_document
 ---
 
-Maybe if I write something in this, it will stop being buggy. 
-
-Mary Joe Frug "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook"
+Mary Joe Frug "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" 
 
 - "Women as characters"
     - test 
