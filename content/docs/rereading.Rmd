@@ -7,15 +7,35 @@ menu:
     weight: 1
 ---
 
-## "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" 
+# The Goal of this Project
 
-- "Women as characters"
-    - test 
-- "Abstract characteristics"  
+*Frugging KCP* applies Mary Joe Frug's methods in "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook" to Knapp, Crystal, and Prince's *Problems in Contract Law: Cases and Materials* (KCP).
+
+This project describes the way that KCP represents gender. Most of the individuals who appears in the cases have one of two discernible binary genders: man or woman. Interestingly, several of the businesses have names that suggest gender - usually masculine - as well. There are substantial qualitative and quantitative differences in the men and the women in the casebook.
+
+## "Re-Reading Contracts"
+
+Frug's ["Re-Reading Contracts"](/static/readings/rereadingcontracts.pdf) is a thorough review of Dawson, Harvey, and Henderson's *Cases and Comment on Contracts* (4th ed. 1982). Frug 
+
+> "My objective is critical in character, for I believe a feminist analysis should change one's consciousness."
+
+> "First, I want to demonstrate that readers' views about gender affect their understanding of a law casebook. Second, I want to demonstrate that gendered aspects of a casebook affect readers' understanding of the law and of themselves." 
+
+### "Women as characters"
+
+### "Abstract characteristics"  
 
 ## Postmodernism
 
-Blah blah
+**Language** is a major factor in the way identities are formed, maintained, and empowered or subjugated. 
+
+
+## Critical Legal Studies
 
 ## Queer
 
+> *I use "gender" to mean the reductive, dualistic classification of an array of social and psychological characteristics according to biological sex.* 
+
+Later on in her career, Frug developed a more complicated view of "biological sex." In her last public work "A Postmodern Feminist Legal Manifesto (An Unfinished Draft)," she offered a definition: 
+
+> *Sex differences are semiotic - that is, constituted by a system of signs that we produce and interpret*
