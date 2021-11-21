@@ -1,6 +1,6 @@
 ---
 bookFlatSection: true
-title: Example Site
+title: Frugging KCP
 weight: 1
 ---
 

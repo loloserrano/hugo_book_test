@@ -1,0 +1,110 @@
+---
+title: "The Cases"
+output: html_document
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(RColorBrewer)
+contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
+defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
+plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
+parties <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/parties_r.xlsx")
+cites <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/cites_for_contracts.xlsx")
+gendertotaltable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/gendertotaltable.xlsx")
+partnertable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/partner_table.xlsx")
+
+names(gendertotaltable)[1] <- "gender"
+names(gendertotaltable)[5] <- "percentage"
+opts <- options(knitr.kable.NA = "")
+
+parties <- parties %>%
+  full_join(cites)
+names(parties)[4] <- "name"
+contracts <- contracts %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+names(parties)[9] <- "cite"
+
+n_parties_joiner <- parties %>%
+  group_by(cite) %>%
+  count() %>%
+  mutate(n_parties = n) %>%
+  select(cite, n_parties)
+
+contracts <- contracts %>%
+  full_join(n_parties_joiner)
+
+```
+
+## Race
+
+Much to the detriment of this project’s usefulness, race is not as measurable in the casebook as gender. There are few people who have names that are clearly European in origin; some of the people with European names are likely to be people of color. Nevertheless, white people likely occupy an enormous proportion of characters in the book. My inability to measure that disparity makes most of this analysis very misleading colorblind. Most people privileged enough to engage in lawsuits, certainly on the plaintiff side, were white for most of American history and continue to be disproportionately white.
+
+## Overview of All Cases
+
+20 of 103 cases, or nearly 1 in 5,  were decided before 1965, when a federal law prohibiting employment discrimination on the basis of race, color, religion, sex, or national origin finally came into effect and the U.S. ceased *legally being a racial apartheid state.* 73 of the 103 cases, or just under 3 in 4, were decided before the 21st century. 
+
+*You can scroll around the chart - each dot has the name and year of the case it represents.
+The y axis is meant to just give a sense of how many cases per year the book contains. For all years with one case, I labeled the case 1. For all years with multiple cases, I labeled the first case 1; the second case 2; etc. So the cases appearing the same year appear stacked vertically. Since there's a lot of points, I used a vertical jitter (height randomizer) so you can see the individual dots.*
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+cases_over_time <- contracts %>%
+  group_by() %>%
+  mutate(count = n()) %>%
+  ungroup %>%
+  ggplot() +
+  geom_jitter(width = 0, height = 0.3, col = "red2", aes(year,forplot,alpha=0.05,text = paste(sep = "",simplecite,", ",year))) +
+  labs(title = "All Cases in KCP, Duplicate Years Spread over Y Axis")
+ggplotly(cases_over_time, tooltip = "text")
+
+```
+
+
+So this project looks at women and men in the case book, but it's looking at much less than that: They're all American, probably mostly white, and likely much more complicated in their personal experiences of gender, race, law, and family than the casebook represents. Gender is so complicated that I devoted a tab above to it (see Queering Postmodern Feminism.) I use the words men and women, but with reservations. 
+
+So, with all that said:
+
+## Gender Breakdown
+
+I collected all individual people and businesses that appear as parties or representatives of parties in all opinions included in the casebook. 
+
+I coded the individual people for gender by making assumptions based on traditional patterns in gendered names and pronouns. In all, I counted 202 individuals appearing as parties themselves or as prominent representatives of organizations in the facts of the opinions. 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+gendertotaltable %>%
+  knitr::kable()
+
+```
+Interestingly, women are slightly more likely to be on the plaintiff side, at 58% (31 of 53) to men's 48% (66 of 136). But it's not a significant difference. 
+
+## Transaction Type 
+
+I coded very roughly for the type of transaction that gave rise to the legal dispute. 
+The label ‘Business’ refers to two or more for-profit organizations interacting with each other in the course of business. 
+The label ‘Consumer’ refers to transactions in which an individual or several individuals purchase goods or service from organization/s
+The label ‘Employee’ refers to transactions in which an individual interacts as a former/potential employee of an organization/s
+The label ‘Family’ really means more interpersonal – the performances induced by these contracts are behavioral in nature, i.e. withholding smoking, being a good little nephew, transfer of money among relatives. 
+The label ‘Property’ refers to transactions between individuals over sale/transfer of property, not individuals interacting with homebuilders, which I counted as a consumer transaction.
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+transaction_table <- contracts %>%
+  filter(transaction != "NA") %>%
+  group_by(transaction) %>%
+  mutate(n = n(), proportion = n/104) %>%
+  mutate(proportion = as.character(proportion)) %>%
+  mutate(proportion = substr(proportion, 1, 4))  %>%
+  mutate(proportion = substr(proportion, 3, 4)) %>%
+  mutate(proportion = paste(sep = "",proportion,"%")) %>%
+  ggplot() +
+  geom_bar(aes(transaction,text = paste(sep = "", n,", ",proportion)),fill = "blue4")
+ggplotly(transaction_table, tooltip = "text")
+
+```
+

@@ -1,0 +1,144 @@
+---
+title: 'The Characters: Wives, Widows, Workers'
+output: html_document
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse) 
+library(readxl)
+library(plotly)
+library(scales)
+library(RColorBrewer)
+contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
+defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
+plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
+parties <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/parties_r.xlsx")
+cites <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/cites_for_contracts.xlsx")
+gendertotaltable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/gendertotaltable.xlsx")
+partnertable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/partner_table.xlsx")
+
+names(gendertotaltable)[1] <- "gender"
+names(gendertotaltable)[5] <- "percentage"
+opts <- options(knitr.kable.NA = "")
+
+parties <- parties %>%
+  full_join(cites)
+names(parties)[4] <- "name"
+contracts <- contracts %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+names(parties)[9] <- "cite"
+
+n_parties_joiner <- parties %>%
+  group_by(cite) %>%
+  count() %>%
+  mutate(n_parties = n) %>%
+  select(cite, n_parties)
+
+parties <- parties %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+contracts <- contracts %>%
+  full_join(n_parties_joiner)
+
+```
+
+
+## Overall Gender Breakdown 
+
+Here again is a table with general gender breakdown, with some additional information about plaintiff/defendant status. 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+gendertotaltable %>%
+  knitr::kable()
+```
+
+This is the same information in bar chart form for easier visualization.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+parties %>%
+  filter(typenomf == "Man" | typenomf == "Woman") %>%
+  ggplot +
+  geom_bar(aes(typenomf, fill = side)) +
+  scale_fill_brewer(palette = "Accent") +
+  labs(title = "Gender Breakdown with π/∆ status")
+
+```
+
+
+```{r}
+parties
+parties %>%
+  filter(transaction == "Employee", typenomf == "Man" | typenomf == "Woman") %>%
+  group_by(typenomf) %>%
+  ggplot(aes(typenomf)) +
+  geom_bar(aes(typenomf))
+
+parties %>%
+  filter(transaction == "Business", typenomf == "Man" | typenomf == "Woman") %>%
+  group_by(typenomf) %>%
+  ggplot(aes(typenomf)) +
+  geom_bar(aes(typenomf))
+```
+
+## Marriage and Family 
+
+This was by far the variable that stood out most to me while going through the book. 57% of the women in the casebook appear with (or regarding) a spouse or partner, as opposed to 19% of men. 13% of women are described regarding some other familiar relationship (aunt, sister, mother, etc.) as opposed to 10% of men. In all, nearly 3 of every 4 women are described by their familiar relations as opposed to less than a third of men.  
+
+Most of these are members of one of the 24 couples who appeared with or against a heterosexual partner in a relationship. 
+
+Two men and two women had their relationships described with reference to the proceedings but without their partner appearing. I.G. Katz brought a promissory estoppel claim against a company the president of which “was also the brother of Katz’s wife,” establishing the connection between Katz and the company; moreover, his wife would benefit from a Social Security clause in the promised contract. Russell N. Pelo was involuntarily committed to a hospital after he telephoned his wife to make threats of self harm, relevant to the context of his refusal to pay. Sondra Locke’s dispute with Warner Bros. is framed as something patronizingly set up for her by her ex Clint Eastwood (not a party), relevant to the argument about good faith. Coretta Scott King brings her case on behalf of her family estate, and is actually a great example of rhetoric relating a woman to a husband but still giving her full agency: “the plaintiff, Coretta Scott King, in her capacity as administratix of the estate of her late husband, and in her individual capacity, appeals...” 237
+
+One man and one woman had their marital status described as a strange, but seemingly purposeful, aside. Dohrmann v. Swaney: “Dohrmann was a 40-year-old neurosurgeon, married to Dr. Helen Dohrmann” 130, where his and his wifes’ professional status establish a class level in this case about fraud? In Aceves v. U.S. Bank, N.A. the judge present the plaintiff, a woman independently bringing a suit whose spouse appears only as a minor detail in the rest of the opinion, as “Claudia Aceves, a married woman.” (255) The case is about bankruptcy – perhaps her marriage establishes some kind of moral credibility? 
+
+## Widows
+
+Three other women were described not with reference to husbands, but to the absence of husbands. Three widows appear in the casebook, all of whom are posed as vulnerable people being taken advantage of. There are no widowers. 
+
+In two of the widows’ cases, their judges lament their age and husbandless-ness at length. In Syester v. Banta, the plaintiff is a “lonely and elderly widow who fell for the blandishments and flattery of those who saw some ‘easy money’ available” 611. “a widow living alone. She has no family. Her exact age does not appear,” but she was around 68. 612. When a young instructor promised her that she could be a professional, the judge commented that “to make such a promise to a lady plaintiff’s age was ridiculous. The fact that she was so gullible as to be an easy victim does not justify...” 613. 
+
+```{r img-with-knitr, echo=FALSE, out.width='25%', fig.cap='This picture of Fred Astaire and Ginger Rogers was included in the text of Syester v. Banta'}
+knitr::include_graphics('/Users/professorserrano/Desktop/Documents/GitHub/hugo_book_test/static/rogers.jpg')
+```
+
+
+Dohrmann v. Swaney: “At the time they met, Mrs. Rogers was a 73-year-old widow” ... “in total, pursuant to the terms of the contract, Mrs. Rogers, an elderly widow, agreed to give Dohrmann...” 135 “At the time of the contract’s execution in 2000, Mrs. Rogers was an 89 year old widow whose husband had died many years previously...Mrs. Rogers was diagnosed with Alzheimer’s disease. She had no children nor any immediate family” 136
+The language of the Kirksey v. Kirksey opinion is not nearly as charged: the plaintiff “for some time been a widow, and had several children.” The framing of vulnerability is less in the case itself, but the casebook. The editors pose Kirksey as an unjust and obsolete alternative to the newer, better concept of promissory estoppel.
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+names(partnertable) <- c("","partner","%partner","family","%family","partner+family","%p+f")
+partnertable %>%
+  knitr::kable()
+```
+
+## All Parties
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+woman_parties <- parties %>%
+  filter(typenomf == "Woman") %>%
+  group_by(year) %>%
+  mutate(n = n()) %>%
+  ggplot(aes(year,n, color = spouse, text = paste(sep = "", name,", ",side,", ",simplecite))) +
+  geom_point(alpha = 0.3, size = 1.5, position = position_jitter(w = 0, h = 0.3)) +
+  scale_color_manual(values=c("red","blue","forestgreen"), labels = c("Misc. Family","Unrelated","Spouse/Partner")) +
+  labs(title = "All Women as Parties") 
+ggplotly(woman_parties, tooltip = "text") 
+```
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+man_parties <- parties %>%
+  filter(typenomf == "Man") %>%
+  group_by(year) %>%
+  mutate(n = n()) %>%
+  ggplot(aes(year,n, color = spouse, text = paste(sep = "", name,", ",side,", ",simplecite))) +
+  geom_point(alpha = 0.3, size = 1.5, position = position_jitter(w = 0, h = 0.3)) +
+  scale_color_manual(values=c("red","blue","forestgreen"), labels = c("Misc. Family","Unrelated","Spouse/Partner")) +
+  labs(title = "All Men as Parties") 
+ggplotly(man_parties, tooltip = "text") 
+
+```
