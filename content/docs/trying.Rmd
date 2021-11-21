@@ -1,6 +1,47 @@
 ---
-title: "trying"
+title: "The Characteristics: Masculine Businesses"
 output: html_document
+type: docs
+menu:
+  after:
+    name: 
+    weight: 4
 ---
 
-fdas fas 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(RColorBrewer) 
+contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
+defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
+plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
+parties <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/parties_r.xlsx")
+cites <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/cites_for_contracts.xlsx")
+gendertotaltable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/gendertotaltable.xlsx")
+partnertable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/partner_table.xlsx")
+
+names(gendertotaltable)[1] <- "gender"
+names(gendertotaltable)[5] <- "percentage"
+opts <- options(knitr.kable.NA = "")
+
+parties <- parties %>%
+  full_join(cites)
+names(parties)[4] <- "name"
+contracts <- contracts %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+names(parties)[9] <- "cite"
+
+n_parties_joiner <- parties %>%
+  group_by(cite) %>%
+  count() %>%
+  mutate(n_parties = n) %>%
+  select(cite, n_parties)
+
+contracts <- contracts %>%
+  full_join(n_parties_joiner)
+
+```
