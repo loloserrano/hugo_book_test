@@ -69,19 +69,33 @@ parties %>%
 ```
 
 
-```{r}
-parties
-parties %>%
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+parties_employee <- parties %>%
   filter(transaction == "Employee", typenomf == "Man" | typenomf == "Woman") %>%
   group_by(typenomf) %>%
-  ggplot(aes(typenomf)) +
-  geom_bar(aes(typenomf))
+  mutate(n = n(), proportion = n/31) %>%
+  mutate(proportion = as.character(proportion)) %>%
+  mutate(proportion = substr(proportion, 1, 4))  %>%
+  mutate(proportion = substr(proportion, 3, 4)) %>%
+  mutate(proportion = paste(sep = "",proportion,"%")) %>%
+  ggplot() +
+  geom_bar(aes(typenomf,fill = typenomf,text = paste(sep = "", n,", ",proportion)),fill=c("cornflowerblue","bisque2")) +
+  labs(title = "Employee-Business Transaction Gender Breakdown") 
 
-parties %>%
+parties_business <- parties %>%
   filter(transaction == "Business", typenomf == "Man" | typenomf == "Woman") %>%
   group_by(typenomf) %>%
-  ggplot(aes(typenomf)) +
-  geom_bar(aes(typenomf))
+  mutate(n = n(), proportion = n/31) %>%
+  mutate(proportion = as.character(proportion)) %>%
+  mutate(proportion = substr(proportion, 1, 4))  %>%
+  mutate(proportion = substr(proportion, 3, 4)) %>%
+  mutate(proportion = paste(sep = "",proportion,"%")) %>%
+  ggplot() +
+  geom_bar(aes(typenomf,fill = typenomf,text = paste(sep = "", n,", ",proportion)),fill=c("hotpink3","chartreuse4")) +
+  labs(title = "Business-Business Transaction Gender Breakdown") 
+
+ggplotly(parties_employee, tooltip = "text")
+ggplotly(parties_business, tooltip = "text")
 ```
 
 ## Marriage and Family 
@@ -100,10 +114,7 @@ Three other women were described not with reference to husbands, but to the abse
 
 In two of the widows’ cases, their judges lament their age and husbandless-ness at length. In Syester v. Banta, the plaintiff is a “lonely and elderly widow who fell for the blandishments and flattery of those who saw some ‘easy money’ available” 611. “a widow living alone. She has no family. Her exact age does not appear,” but she was around 68. 612. When a young instructor promised her that she could be a professional, the judge commented that “to make such a promise to a lady plaintiff’s age was ridiculous. The fact that she was so gullible as to be an easy victim does not justify...” 613. 
 
-```{r img-with-knitr, echo=FALSE, out.width='25%', fig.cap='This picture of Fred Astaire and Ginger Rogers was included in the text of Syester v. Banta'}
-knitr::include_graphics('/Users/professorserrano/Desktop/Documents/GitHub/hugo_book_test/static/rogers.jpg')
-```
-
+![Fred and Ginger](/img/rogers.png)
 
 Dohrmann v. Swaney: “At the time they met, Mrs. Rogers was a 73-year-old widow” ... “in total, pursuant to the terms of the contract, Mrs. Rogers, an elderly widow, agreed to give Dohrmann...” 135 “At the time of the contract’s execution in 2000, Mrs. Rogers was an 89 year old widow whose husband had died many years previously...Mrs. Rogers was diagnosed with Alzheimer’s disease. She had no children nor any immediate family” 136
 The language of the Kirksey v. Kirksey opinion is not nearly as charged: the plaintiff “for some time been a widow, and had several children.” The framing of vulnerability is less in the case itself, but the casebook. The editors pose Kirksey as an unjust and obsolete alternative to the newer, better concept of promissory estoppel.
