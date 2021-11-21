@@ -2,13 +2,15 @@
 headless: true
 ---
 
-- [**Example Site**]({{< relref "/docs/example" >}})
-- [Table of Contents]({{< relref "/docs/example/table-of-contents" >}})
-  - [With ToC]({{< relref "/docs/example/table-of-contents/with-toc" >}})
-  - [Without ToC]({{< relref "/docs/example/table-of-contents/without-toc" >}})
-- [Collapsed]({{< relref "/docs/example/collapsed" >}})
-  - [3rd]({{< relref "/docs/example/collapsed/3rd-level" >}})
-    - [4th]({{< relref "/docs/example/collapsed/3rd-level/4th-level" >}})
+- [**Frugging KCP**]("/content/_index.Rmd")
+- [Introduction]("/content/_index.Rmd")
+- [On Style]("/docs/on_style.Rmd")
+- [Re-Reading Contracts and Updating Frug]("/docs/rereading.Rmd")
+- [The Cases: An Overview]("/docs/cases.Rmd")
+- [The Characters: Wives, Widows, and Workers]("/docs/characters/characters1.Rmd")
+  - [Husbands and Wives]("/docs/characters/characterssub/characters2.Rmd")
+  - [Widows]("/docs/characters/characterssub/characters3.Rmd")
+- [The Characteristics: He's a Corporation]("/docs/trying.Rmd")
 <br />
 
 - [**Frugging KCP**]({{<relref "/content/_index.md">}})
@@ -22,3 +24,4 @@ headless: true
 - [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
 - [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
 <br />
+
