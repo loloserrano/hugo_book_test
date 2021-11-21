@@ -16,7 +16,7 @@ This project describes the way that KCP represents gender. Most of the individua
 
 ## "Re-Reading Contracts"
 
-Frug's ["Re-Reading Contracts"](/static/readings/rereadingcontracts.pdf) is a thorough review of Dawson, Harvey, and Henderson's *Cases and Comment on Contracts* (4th ed. 1982). Frug 
+Frug's ["Re-Reading Contracts"](/readings/rereadingcontracts.pdf) is a thorough review of Dawson, Harvey, and Henderson's *Cases and Comment on Contracts* (4th ed. 1982). Frug 
 
 > "My objective is critical in character, for I believe a feminist analysis should change one's consciousness."
 
