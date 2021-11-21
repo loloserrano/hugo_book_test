@@ -3,6 +3,7 @@ title: "The Cases: An Overview"
 output: html_document
 ---
 
+
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(readxl)
@@ -39,6 +40,8 @@ contracts <- contracts %>%
   full_join(n_parties_joiner)
 
 ```
+
+# Overview 
 
 ## Race
 
@@ -86,11 +89,11 @@ Interestingly, women are slightly more likely to be on the plaintiff side, at 58
 ## Transaction Type 
 
 I coded very roughly for the type of transaction that gave rise to the legal dispute. 
-The label ‘Business’ refers to two or more for-profit organizations interacting with each other in the course of business. 
+The label ‘Business’ refers to two or more for-profit organizations interacting with each other in the course of business.
 The label ‘Consumer’ refers to transactions in which an individual or several individuals purchase goods or service from organization/s
 The label ‘Employee’ refers to transactions in which an individual interacts as a former/potential employee of an organization/s
 The label ‘Family’ really means more interpersonal – the performances induced by these contracts are behavioral in nature, i.e. withholding smoking, being a good little nephew, transfer of money among relatives. 
-The label ‘Property’ refers to transactions between individuals over sale/transfer of property, not individuals interacting with homebuilders, which I counted as a consumer transaction.
+The label ‘Property’ refers to transactions between individuals over sale/transfer of property, not individuals interacting with homebuilders, which I counted as a consumer transaction. 
 
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}

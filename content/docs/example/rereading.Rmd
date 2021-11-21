@@ -3,3 +3,4 @@ title: "Re-Reading Contracts and Updating Frug"
 output: html_document
 ---
 
+Maybe if I write something in this, it will stop being buggy.
