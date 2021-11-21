@@ -1,12 +1,17 @@
 ---
 title: Introduction
 type: docs
+menu:
+  before:
+    name: 
+    weight: 10
+    
 ---
 
 # Frugging KCP
 
 
-This project is a postmodern analysis of gender in Knapp, Crystal, and Prince’s *Problems in Contract Law: Cases and Materials.* *Problems in Contract Law* is an American contracts casebook that attempts, in good faith and with a commercial incentive, to relay the current state and relevant history of American contract law to first-year law students. The opinions 
+This project is a postmodern analysis of gender in Knapp, Crystal, and Prince’s *Problems in Contract Law: Cases and Materials.* *Problems in Contract Law* is an American contracts casebook that attempts, in good faith and with a commercial incentive, to relay the current state and relevant history of American contract law to first-year law students. 
 
 This is a descriptive project, but is necessarily political, and comes with a heavy normative undertone. This project compares the ways in which women, as a political population, appear in the casebook differently from men. Most Americans expected women not to participate in the government or the formal economy from the country’s inception to the early twentieth century, and not to occupy public positions of capitalist power until the middle of the twentieth century. There is a massive historical disparity in the relative power of women in public (again, as a political population) and men (the same), that is slowly edging towards parity according mostly to economic metrics. 
 
@@ -26,8 +31,6 @@ Mary Joe Frug was a gender and legal theorist who produced luminary work on oppr
 Lolo Serrano is a candidate for a JD/PhD in American Legal History at the University of Pennsylvania. They are inspired by Frug's work 
 
 {{< /columns >}}
-
-## 
 
 This project is directly inspired by Mary Joe Frug's "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook. "
 

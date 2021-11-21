@@ -112,9 +112,17 @@ One man and one woman had their marital status described as a strange, but seemi
 
 Three other women were described not with reference to husbands, but to the absence of husbands. Three widows appear in the casebook, all of whom are posed as vulnerable people being taken advantage of. There are no widowers. 
 
-In two of the widows’ cases, their judges lament their age and husbandless-ness at length. In Syester v. Banta, the plaintiff is a “lonely and elderly widow who fell for the blandishments and flattery of those who saw some ‘easy money’ available” 611. “a widow living alone. She has no family. Her exact age does not appear,” but she was around 68. 612. When a young instructor promised her that she could be a professional, the judge commented that “to make such a promise to a lady plaintiff’s age was ridiculous. The fact that she was so gullible as to be an easy victim does not justify...” 613. 
+In two of the widows’ cases, their judges lament their age and husbandless-ness at length. 
 
-![Fred and Ginger](/Users/professorserrano/Desktop/Documents/GitHub/hugo_book_test/img/rogers.jpg)
+In *Syester v. Banta,* Justice Snell of the Iowa Supreme Court describes the plaintiff: 
+
+> Plaintiff is a lonely and elderly widow who fell for the blandishments and flattery of those who saw some ‘easy money’ available. 
+
+She was “a widow living alone. She has no family. Her exact age does not appear,” but the judge provides one estimate of 68 (so not exactly on death's door!) The judge denounced the dancing studio employees who flattered her talent: 
+
+> She testified 'He promised me all the privileges of the studio and I would be a professional dancer.' To make such a promise to a lady plaintiff’s age was ridiculous. The fact that she was so gullible as to be an easy victim does not justify taking over $29,000 of her money.” 
+
+[Fred and Ginger](/img/rogers.png)
 
 Dohrmann v. Swaney: “At the time they met, Mrs. Rogers was a 73-year-old widow” ... “in total, pursuant to the terms of the contract, Mrs. Rogers, an elderly widow, agreed to give Dohrmann...” 135 “At the time of the contract’s execution in 2000, Mrs. Rogers was an 89 year old widow whose husband had died many years previously...Mrs. Rogers was diagnosed with Alzheimer’s disease. She had no children nor any immediate family” 136
 The language of the Kirksey v. Kirksey opinion is not nearly as charged: the plaintiff “for some time been a widow, and had several children.” The framing of vulnerability is less in the case itself, but the casebook. The editors pose Kirksey as an unjust and obsolete alternative to the newer, better concept of promissory estoppel.
