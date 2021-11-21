@@ -2,6 +2,10 @@
 title: "The Cases: An Overview"
 output: html_document
 type: docs
+menu:
+  after:
+    name:
+    weight: 2
 ---
  
 
