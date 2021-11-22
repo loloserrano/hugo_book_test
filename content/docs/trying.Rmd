@@ -15,6 +15,8 @@ library(tidyverse)
 library(readxl)
 library(plotly)
 library(RColorBrewer) 
+library(systemfonts)
+library(kableExtra)
 contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
 defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
 plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
@@ -50,6 +52,8 @@ n_parties_joiner <- parties %>%
 contracts <- contracts %>%
   full_join(n_parties_joiner)
 
+
+
 ```
 
 # Gendered Characteristics
@@ -59,10 +63,14 @@ contracts <- contracts %>%
 A remarkable number of businesses - 19 - have explicitly masculine names. 
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-parties %>%
+mbusinesses <- parties %>%
   filter(typemf == "MBusiness") %>%
-  select(name, year, page, simplecite) %>%
-  knitr::kable()
+  select(name, year, page, simplecite)
+names(mbusinesses) <- c("Business","Year","Page in KCP","Case")
+
+mbusinesses %>%
+  kbl() %>%
+  scroll_box(fixed_thead = T, height = "300px") 
 
 ```
 
@@ -72,8 +80,13 @@ parties %>%
 In contrast, there are only four feminine-named businesses.
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-parties %>%
+wbusinesses <- parties %>%
   filter(typemf == "FBusiness") %>%
-  select(name, year, page, simplecite) %>%
-  knitr::kable()
+  select(name, year, page, simplecite)
+names(wbusinesses) <- c("Business","Year","Page in KCP","Case")
+
+wbusinesses %>%
+  knitr::kable() %>%
+  scroll_box(fixed_thead = TRUE, height = "300px") 
+
 ```
