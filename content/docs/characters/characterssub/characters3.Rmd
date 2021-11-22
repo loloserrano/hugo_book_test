@@ -1,7 +1,6 @@
 ---
 title: 'Widows'
 output: html_document
-bookCollapseSection: true
 bookToc: true
 menu:
   after:
