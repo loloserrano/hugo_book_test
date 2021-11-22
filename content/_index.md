@@ -38,18 +38,32 @@ This project is directly inspired by Mary Joe Frug's "Re-Reading Contracts: A Fe
 
 ## Table of Contents
 
-### Queering Frug's Feminism
+### On Style
+
+### Re-Reading Contracts and Updating Frug
 
 In this section I describe the purpose, framework, and theory of this project. I detail the work of Mary Joe Frug on which this project is based and introduce new ideas, both from her other pieces and from later work, that complicate the idea of gender. 
 
-### The Cases
+### The Cases: An Overview
 
 In this section I describe my data collecting process, the scope of the cases, and some basic preliminary information breaking down the dataset. 
 
-### The Characters
+### The Characters: Wives, Widows, and Workers
 
 In this section I explore the individual humans who appear in the casebook as characters, understood, framed, and described by judges and casebook editors. Most of my focus in the section is on women, who appear as a minority of characters and in a strictly limited set of roles. Most strikingly, over half of the women appear in the litigation with a heterosexual partner; nearly another quarter of the women appear with another family member. 
 
-### Masculine Businesses
+#### Wives
+
+In this section I explore the massive disparity in marital status. 
+
+#### Widows
+
+In this section I explore the particularly evocative language and framing around *three* sad, vulnerable widows. 
+
+#### Workers
+
+In this section I explore the difference in class of gendered workers. 
+
+### The Characteristics: Masculine Businesses
 
 In this section I explore general notions of masculinity and femininity as they appear in the casebook. The most striking pattern here is the significant number of businesses with masculine sounding names.
