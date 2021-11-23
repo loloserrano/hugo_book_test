@@ -40,7 +40,7 @@ Lolo Serrano is a candidate for a JD/PhD in American Legal History at the Univer
 
 {{< /columns >}}
 
-![Mary Joe Frug]('/img/frug1.jpg')
+![Mary Joe Frug](/img/frug1.jpg)
 
 ## Re-Reading Contracts and Updating Frug
 
