@@ -164,4 +164,3 @@ ggplotly(man_parties, tooltip = "text")
 
 ```
 
-
