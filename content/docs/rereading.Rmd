@@ -5,7 +5,7 @@ bookToc: true
 menu:
   after:
     name:
-    weight: 2
+    weight: 3
 ---
 
 # The Goal of this Project
@@ -16,7 +16,7 @@ This project describes the way that KCP represents gender. Most of the individua
 
 ## "Re-Reading Contracts"
 
-Frug's ["Re-Reading Contracts"](/readings/rereadingcontracts.pdf) is a thorough review of Dawson, Harvey, and Henderson's *Cases and Comment on Contracts* (4th ed. 1982). Frug 
+Frug's "Re-Reading Contracts" is a thorough review of Dawson, Harvey, and Henderson's *Cases and Comment on Contracts* (4th ed. 1982). 
 
 > "My objective is critical in character, for I believe a feminist analysis should change one's consciousness."
 
@@ -37,6 +37,6 @@ Frug's ["Re-Reading Contracts"](/readings/rereadingcontracts.pdf) is a thorough 
 
 > *I use "gender" to mean the reductive, dualistic classification of an array of social and psychological characteristics according to biological sex.* 
 
-Later on in her career, Frug developed a more complicated view of "biological sex." In her last public work "A Postmodern Feminist Legal Manifesto (An Unfinished Draft)," she offered a definition: 
+Later on in her career, Frug developed a more complicated view of "biological sex" than what she displays  In her last public work "A Postmodern Feminist Legal Manifesto (An Unfinished Draft)," she offered a definition: 
 
 > *Sex differences are semiotic - that is, constituted by a system of signs that we produce and interpret*

@@ -38,7 +38,6 @@ Lolo Serrano is a candidate for a JD/PhD in American Legal History at the Univer
 ![Mary Joe Frug](/img/frug1.jpg)
 =======
 This project is directly inspired by Mary Joe Frug's "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook. "
->>>>>>> parent of dbfaff0 (push1 11/23)
 
 ## Table of Contents
 

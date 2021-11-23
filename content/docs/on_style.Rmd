@@ -5,11 +5,7 @@ output: html_document
 menu:
   after:
     name:
-<<<<<<< HEAD
-    weight: 1
-=======
-    weight: 10
->>>>>>> parent of dbfaff0 (push1 11/23)
+    weight: 2
 ---
 
 ## "Frugging KCP" and the word "Fruggish" are intentionally irreverent, and I think she wouldn't mind. 
