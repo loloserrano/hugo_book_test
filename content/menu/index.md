@@ -7,7 +7,7 @@ headless: true
 - [On Style]({{< relref "/docs/on_style" >}})
 - [Re-Reading Contracts and Updating Frug]({{< relref "/docs/rereading" >}})
 - [The Cases: An Overview]({{< relref "/docs/cases" >}})
-- [The Characters: Wives, Widows, and Workers]({{< relref "/docs/Characters/characters1" >}})
+- [The Characters: Wives, Widows, and Workers]({{< relref "/docs/Characters/_index" >}})
   - [Wives]({{< relref "/docs/Characters/characters2" >}})
   - [Widows]({{< relref "/docs/Characters/characters3" >}})
   - [Workers]({{< relref "/docs/Characters/characters4" >}})
