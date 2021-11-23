@@ -3,10 +3,7 @@ title: "The Characteristics: He's A Corporation"
 output: html_document
 type: docs
 bookToc: true
-menu:
-  after:
-    name:
-    weight: 4
+menu: true
 ---
 
 
