@@ -1,6 +1,10 @@
 ---
 title: "Widows"
 output: html_document
+menu:
+  before:
+    name:
+    weight: 3
 ---
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}

@@ -2,7 +2,7 @@
 headless: true
 ---
 
-- [**Frugging KCP**]({{< relref "/content/_index" >}})
+- [*Frugging KCP*]({{< relref "/content/_index" >}})
 - [Introduction]({{< relref "/content/_index" >}})
 - [On Style]({{< relref "/docs/on_style" >}})
 - [Re-Reading Contracts and Updating Frug]({{< relref "/docs/rereading" >}})

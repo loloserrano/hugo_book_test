@@ -5,7 +5,7 @@ bookToc: true
 menu:
   after:
     name:
-    weight: 1
+    weight: 2
 ---
 
 # The Goal of this Project
