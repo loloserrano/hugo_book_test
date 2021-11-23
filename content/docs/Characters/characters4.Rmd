@@ -1,22 +1,15 @@
 ---
-title: "The Characteristics: He's A Corporation"
+title: "Workers"
 output: html_document
-type: docs
-bookToc: true
-menu:
-  after:
-    name:
-    weight: 4
 ---
 
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-library(tidyverse)
+library(tidyverse) 
 library(readxl)
 library(plotly)
-library(RColorBrewer) 
-library(systemfonts)
-library(kableExtra)
+library(scales)
+library(RColorBrewer)
 contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
 defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
 plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
@@ -36,12 +29,7 @@ contracts <- contracts %>%
   mutate(simplecite = cite) %>%
   mutate(simplecite = str_extract(simplecite, "[^,]+"))
 
-
 names(parties)[9] <- "cite"
-
-parties <- parties %>%
-  mutate(simplecite = cite) %>%
-  mutate(simplecite = str_extract(simplecite, "[^,]+"))
 
 n_parties_joiner <- parties %>%
   group_by(cite) %>%
@@ -49,46 +37,11 @@ n_parties_joiner <- parties %>%
   mutate(n_parties = n) %>%
   select(cite, n_parties)
 
+parties <- parties %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
 contracts <- contracts %>%
   full_join(n_parties_joiner)
-
-
-
-```
-
-# Gendered Characteristics
-
-## Corporations are people, my friend
-
-## Masculine Businesses
-
-19 businesses have masculine names, either through the first name of a person, a group signifier like Bros. or Messrs., or characters like Hercules or "Pop."
-
-```{r, echo = FALSE, warning = FALSE, message = FALSE}
-mbusinesses <- parties %>%
-  filter(typemf == "MBusiness") %>%
-  select(name, year, page, simplecite)
-names(mbusinesses) <- c("Business","Year","Page in KCP","Case")
-
-kable(mbusinesses, "html") %>%
-  kable_styling(fixed_thead = TRUE) %>%
-  scroll_box(height = "300px") 
-
-```
-
-
-## Feminine Businesses
-
-In contrast, there are only four feminine-named businesses.
-
-```{r, echo = FALSE, warning = FALSE, message = FALSE}
-wbusinesses <- parties %>%
-  filter(typemf == "FBusiness") %>%
-  select(name, year, page, simplecite)
-names(wbusinesses) <- c("Business","Year","Page in KCP","Case")
-
-kable(wbusinesses, "html") %>%
-  kable_styling(fixed_thead = T) %>%
-  scroll_box(height = "300px") 
 
 ```

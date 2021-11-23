@@ -1,0 +1,174 @@
+---
+title: "Wives"
+output: html_document
+weight: 1
+---
+ 
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse) 
+library(readxl)
+library(plotly)
+library(scales)
+library(RColorBrewer)
+library(kableExtra)
+contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
+defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
+plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
+parties <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/parties_r.xlsx")
+cites <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/cites_for_contracts.xlsx")
+gendertotaltable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/gendertotaltable.xlsx")
+partnertable <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/partner_table.xlsx")
+couples <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/couples.xlsx")
+
+names(gendertotaltable)[1] <- "gender"
+names(gendertotaltable)[5] <- "percentage"
+opts <- options(knitr.kable.NA = "")
+
+parties <- parties %>%
+  full_join(cites)
+names(parties)[4] <- "name"
+contracts <- contracts %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+names(parties)[9] <- "cite"
+
+n_parties_joiner <- parties %>%
+  group_by(cite) %>%
+  count() %>%
+  mutate(n_parties = n) %>%
+  select(cite, n_parties)
+
+parties <- parties %>%
+  mutate(simplecite = cite) %>%
+  mutate(simplecite = str_extract(simplecite, "[^,]+"))
+
+contracts <- contracts %>%
+  full_join(n_parties_joiner)
+
+```
+
+
+
+## Marriage and Family 
+
+57% of the women in the casebook appear with (or regarding) a spouse or partner, as opposed to 19% of men. 13% of women are described regarding some other familiar relationship (aunt, sister, mother, etc.) as opposed to 10% of men. In all, nearly 3 of every 4 women are described by their familiar relations as opposed to less than a third of men. 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+names(partnertable) <- c("","partner","%partner","family","%family","partner+family","%p+f")
+
+```
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+
+
+parties_business <- parties %>%
+  filter(transaction == "Business", typenomf == "Man" | typenomf == "Woman") %>%
+  group_by(typenomf) %>%
+  mutate(n = n(), proportion = n/31) %>%
+  mutate(proportion = as.character(proportion)) %>%
+  mutate(proportion = substr(proportion, 1, 4))  %>%
+  mutate(proportion = substr(proportion, 3, 4)) %>%
+  mutate(proportion = paste(sep = "",proportion,"%")) %>%
+  ggplot() +
+  geom_bar(aes(typenomf,fill = typenomf,text = paste(sep = "", n,", ",proportion)),fill=c("hotpink3","chartreuse4")) +
+  labs(title = "Business-Business Transaction Gender Breakdown") 
+
+a <- parties %>%
+  filter(typenomf == "Man" | typenomf == "Woman" | typenomf == "Unknown" ) %>%
+  group_by(typenomf) %>%
+  mutate(typea = n()) %>%
+  ungroup() %>%
+  group_by(typenomf,spouse) %>%
+  mutate(typeb = n()) %>%
+  mutate(percentage = paste(sep = "", str_sub(as.character(typeb/typea),3,4),"%")) %>%
+  ggplot(aes(typenomf, fill = spouse)) + 
+  geom_bar(aes(text = paste(sep = "", typeb,", ",percentage))) +
+  scale_fill_discrete(name = "Family/Spousal\nStatus", breaks = c("Y","F","N"), labels = c("Spouse/Partner","Family Member","Unrelated"))
+ggplotly(a, tooltip = "text")  
+
+```
+
+### The (Un)Happy Couples 
+
+Most of these are members of one of the 24 couples who appeared with or against a heterosexual partner in a relationship. 
+
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+partnertable %>%
+  knitr::kable() 
+couples1 <- couples %>%
+  filter(couple == 1)
+couples2 <- couples %>%
+  filter(couple ==2)
+couples3 <- couples %>%
+  filter(couple == 3)
+couples4 <- couples %>%
+  filter(couple ==4)
+
+couples_table <- couples1 %>%
+  right_join(couples2,by=c("page","year","transaction","cite","simplecite")) %>%
+  select(name.x,name.y,page,simplecite)
+
+couples_table2 <- couples3 %>% 
+  right_join(couples4,by=c("page","year","transaction","cite","simplecite")) %>%
+  select(name.x,name.y,page,simplecite)
+
+couples_table <- full_join(couples_table, couples_table2)
+
+kable(couples_table, "html", caption = "Couples in KCP") %>%
+  kable_styling(fixed_thead = TRUE) %>%
+  scroll_box(height = "300px") 
+
+
+```
+
+
+
+## Relevant Non-Party Spouses
+
+Two men and two women had their relationships described with reference to the proceedings but without their partner appearing. 
+
+### Katz v. Danny Dare Inc.
+#### 610 S.W.2d 121 (Mo. Ct. App. 1980)
+#### KCP 248
+
+I.G. Katz brought a promissory estoppel claim against a company the president of which “was also the brother of Katz’s wife,” establishing the connection between Katz and the company; moreover, his wife would benefit from a Social Security clause in the promised contract.
+
+### Credit Bureau Enter. v. Pelo
+#### 608 N.W.2d 20 (Iowa 2000)
+#### KCP 297
+
+Russell N. Pelo was involuntarily committed to a hospital after he telephoned his wife to make threats of self harm, relevant to the context of his refusal to pay. 
+
+### Locke v. Warner Bros., Inc. 
+#### 57 Cal. App. 4th 354 (1997)
+#### KCP 513
+
+Sondra Locke’s dispute with Warner Bros. is framed as something patronizingly set up for her by her ex Clint Eastwood (not a party), relevant to the argument about good faith.
+
+### King v. Trustees of Boston Univ.
+#### 420 Mass. 52 (1995)
+#### KCP 237
+
+Coretta Scott King brings her case on behalf of her family estate, and is actually a great example of rhetoric relating a woman to a husband but still giving her full agency: 
+
+> *“The plaintiff, Coretta Scott King, in her capacity as administratix of the estate of her late husband, and in her individual capacity, appeals...”*
+
+## Barely Relevant Non-Party Status. 
+
+One man and one woman had their marital status described as a strange, but seemingly purposeful, aside. 
+
+### Dohrmann v. Swaney
+#### 14 N.E.3d 605 (Ill. 2014)
+#### KCP 129
+
+Dohrmann v. Swaney: “Dohrmann was a 40-year-old neurosurgeon, married to Dr. Helen Dohrmann” 130, where his and his wifes’ professional status establish a class level in this case about fraud? 
+
+### Aceves v. U.S. Bank N.A.
+#### 120 Cal. Rptr. 3d 507 (Cal. Ct. App. 2011)
+#### KCP 255
+
+In Aceves v. U.S. Bank, N.A. the judge present the plaintiff, a woman independently bringing a suit whose spouse appears only as a minor detail in the rest of the opinion, as “Claudia Aceves, a married woman.” (255) The case is about bankruptcy – perhaps her marriage establishes some kind of moral credibility? 
+
