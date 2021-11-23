@@ -1,10 +1,6 @@
 ---
 title: "Wives"
 output: html_document
-menu:
-  after:
-    name:
-    weight: 2
 ---
  
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}

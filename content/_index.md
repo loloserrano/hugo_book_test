@@ -1,11 +1,6 @@
 ---
 title: Introduction
 type: docs
-menu:
-  before:
-    name: 
-    weight: 1
-
 ---
 
 # Frugging KCP

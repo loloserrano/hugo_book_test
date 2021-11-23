@@ -3,12 +3,8 @@ title: 'The Characters: Wives, Widows, Workers'
 output: html_document
 bookToc: true
 bookCollapseSection: true
-menu:
-  after:
-    name:
-    weight: 3
 ---
- 
+
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 library(tidyverse) 
 library(readxl)

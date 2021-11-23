@@ -2,10 +2,6 @@
 title: "On Style"
 bookToc: true
 output: html_document
-menu:
-  after:
-    name:
-    weight: 2
 ---
 
 ## "Frugging KCP" and the word "Fruggish" are intentionally irreverent, and I think she wouldn't mind. 

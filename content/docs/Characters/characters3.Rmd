@@ -1,10 +1,6 @@
 ---
 title: "Widows"
 output: html_document
-menu:
-  before:
-    name:
-    weight: 3
 ---
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
@@ -12,7 +8,8 @@ library(tidyverse)
 library(readxl)
 library(plotly)
 library(scales)
-library(RColorBrewer)
+library(RColorBrewer) 
+
 contracts <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/contracts_gender_r_2.xlsx")
 defs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/defs_r.xlsx")
 plfs <- read_excel("/Users/professorserrano/Desktop/Documents/Video Essays/Law/plfs_r.xlsx")
