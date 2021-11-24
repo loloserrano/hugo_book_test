@@ -47,6 +47,9 @@ menu:
       weight: 20
     - name: "Re-Reading Contracts and Updating Frug"
       url: "/docs/rereading"
+      weight: 30
+    - name: "The Cases: an Overview"
+      url: "/docs/cases"
       weight: 40
     - name: "The Characters: Wives, Widows, Workers"
       url: "/docs/Characters/characters"

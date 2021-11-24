@@ -1,10 +1,11 @@
 ---
 title: Introduction
 type: docs
+menu:
+   weight: 1
 ---
 
 # Frugging KCP
-
 
 This project analyzes gender in Knapp, Crystal, and Prince’s *Problems in Contract Law: Cases and Materials.* 
 

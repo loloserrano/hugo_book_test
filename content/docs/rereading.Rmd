@@ -2,6 +2,7 @@
 title: "Re-Reading Contracts and Updating Frug"
 output: html_document
 bookToc: true
+weight: 30
 ---
 
 # The Goal of this Project
