@@ -35,40 +35,7 @@ languages:
     weight: 3
 
 menu:
-  content:
-    - name: "**Frugging KCP**"
-      url: "/_index"
-      weight: 0
-    - name: "Introduction"
-      url: "/_index"
-      weight: 10
-    - name: "On Style"
-      url: "/docs/on_style"
-      weight: 20
-    - name: "Re-Reading Contracts and Updating Frug"
-      url: "/docs/rereading"
-      weight: 30
-    - name: "The Cases: an Overview"
-      url: "/docs/cases"
-      weight: 40
-    - name: "The Characters: Wives, Widows, Workers"
-      url: "/docs/Characters/characters"
-      identifier: chars
-      weight: 50
-    - name: "The Characteristics: He's a Business, Man"
-      url: "/docs/trying"
-      weight: 60
-  chars: 
-    - name: "Wives"
-      url: "/docs/Characters/characters2"
-      weight: 51
-    - name: "Widows"
-      url: "/docs/Characters/characters3"
-      weight: 52
-    - name: "Workers"
-      url: "/docs/Characters/characters4"
-      weight: 53
-
+  before:[]
   # after:
   #  - name: "Github"
   #    url: "https://github.com/alex-shpak/hugo-book"
@@ -93,7 +60,6 @@ params:
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  # BookMenuBundle: /menu
 
   # (Optional, default docs) Specify root page to render child pages as menu.
   # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
