@@ -2,7 +2,7 @@
 title: Introduction
 type: docs
 menu:
-   weight: 0
+   weight: 1
 ---
 
 # Frugging KCP
