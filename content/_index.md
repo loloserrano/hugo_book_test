@@ -2,7 +2,7 @@
 title: Introduction
 type: docs
 menu:
-   weight: 1
+   weight: 0
 ---
 
 # Frugging KCP
@@ -31,8 +31,9 @@ Lolo Serrano is a candidate for a JD/PhD in American Legal History at the Univer
 {{< /columns >}}
 
 <<<<<<< HEAD
-![Mary Joe Frug](/img/frug1.jpg)
+
 =======
+
 This project is directly inspired by Mary Joe Frug's "Re-Reading Contracts: A Feminist Analysis of a Contracts Casebook. "
 
 ## Table of Contents
